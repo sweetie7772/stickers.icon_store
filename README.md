@@ -1,0 +1,1 @@
+# stickers.icon_store
