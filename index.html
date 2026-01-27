@@ -50,10 +50,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="container">
-        <h1>Stickers as a mood</h1>
-        <p>наліпки, як продовження тебе</p>
-        <a href="#catalog" class="btn">Обрати набір →</a>
+  <div class="container">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+      
+    </div>
+  </div>
+</section>
 
         <!-- Sticker note -->
         <div class="sticker-note" style="top: 30px; right: 30px; display: none">
@@ -63,6 +66,7 @@
     </section>
 
     <!-- Catalog Section -->
+
     <section class="catalog" id="catalog">
       <div class="container">
         <h2 class="section-title">Наші набори</h2>
@@ -382,9 +386,9 @@
       // Add decorative sticker notes
       function addStickerNotes() {
         const notes = [
-          { text: "handmade", icon: "fas fa-heart", top: "10%", left: "5%" },
-          { text: "style", icon: "fas fa-star", top: "15%", right: "10%" },
-          { text: "for you", icon: "fas fa-check", bottom: "20%", left: "8%" },
+          { text: "handmade", icon: "fas fa-heart" },
+          { text: "style", icon: "fas fa-star" },
+          { text: "for you", icon: "fas fa-check" },
         ];
 
         notes.forEach((note) => {
