@@ -6,18 +6,20 @@
 }
 
 :root {
-  --beige-light: #f5f1ea;
-  --beige-medium: #e8dfd5;
-  --beige-dark: #d3c8b5;
-  --beige-brown: #a68a64;
-  --dark-brown: #6d5d4b;
-  --accent-color: #8b7355;
+  --pink-light: #fff1f6;
+  --pink-medium: #ffd6e7;
+  --pink-dark: #f78fb3;
+  --pink-brown: #e75480;
+  --dark-pink: #8c5a5a;
+  --accent-color: #ff85a2;
   --text-dark: #4a4035;
   --text-light: #8b7d6b;
+  --beige-light: #f5f1ea;
+  --beige-medium: #e8dfd5;
 }
 
 body {
-  background-color: #f6ece8;
+  background-color: var(--pink-light);
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -28,14 +30,14 @@ body {
   padding: 0 20px;
 }
 
-/* Header & Navigation */
+/* Header & Navigation - обновленные розовые тона */
 header {
   background-color: #fde2eb;
-  box-shadow: 0 2px 10px rgba(109, 93, 75, 0.08);
+  box-shadow: 0 2px 10px rgba(140, 90, 90, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--beige-dark);
+  border-bottom: 1px solid var(--pink-dark);
 }
 
 .nav-container {
@@ -48,13 +50,14 @@ header {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   text-decoration: none;
   letter-spacing: -0.5px;
+  cursor: pointer;
 }
 
 .logo span {
-  color: #fff1f6;
+  color: var(--pink-dark);
 }
 
 .nav-links {
@@ -63,23 +66,24 @@ header {
 }
 
 .nav-links li {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #8c5a5a;
+  color: var(--dark-pink);
   font-weight: 500;
   transition: color 0.3s;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
-  color: #e75480;
+  color: var(--pink-brown);
 }
 
 .nav-links a.active {
-  color: #f78fb3;
+  color: var(--pink-brown);
 }
 
 .nav-links a.active::after {
@@ -89,19 +93,20 @@ header {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: var(--pink-brown);
 }
 
 .cart-icon {
   position: relative;
   cursor: pointer;
+  margin-left: 25px;
 }
 
 .cart-count {
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: var(--accent-color);
+  background-color: var(--pink-brown);
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -116,7 +121,17 @@ header {
   display: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
+}
+
+/* Main page sections - показаны по умолчанию */
+.main-page-section {
+  display: block;
+}
+
+/* Individual pages sections - скрыты по умолчанию */
+.individual-page {
+  display: none;
 }
 
 /* Hero Section */
@@ -124,7 +139,6 @@ header {
   text-align: center;
   padding: 140px 20px;
   margin-bottom: 40px;
-
   background-image: url(./stickers_images/logo.jpg);
   background-size: cover;
   background-position: center;
@@ -139,7 +153,7 @@ header {
 
 .btn {
   display: inline-block;
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
   color: white;
   padding: 14px 35px;
   border-radius: 2px;
@@ -154,17 +168,17 @@ header {
 }
 
 .btn:hover {
-  background-color: var(--accent-color);
+  background-color: var(--pink-dark);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 115, 85, 0.15);
+  box-shadow: 0 5px 15px rgba(231, 84, 128, 0.15);
 }
 
 .btn-secondary {
-  background-color: var(--dark-brown);
+  background-color: var(--dark-pink);
 }
 
 .btn-secondary:hover {
-  background-color: var(--text-dark);
+  background-color: var(--pink-brown);
 }
 
 /* Catalog Section */
@@ -172,7 +186,7 @@ header {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 50px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 300;
   position: relative;
   padding-bottom: 15px;
@@ -186,13 +200,14 @@ header {
   transform: translateX(-50%);
   width: 80px;
   height: 2px;
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
 }
 
 .catalog {
   padding: 80px 0;
 }
 
+/* Изменено для мобильных устройств - показывать по 2 объекта */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -200,20 +215,34 @@ header {
   margin-bottom: 60px;
 }
 
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
 .product-card {
   background-color: white;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(109, 93, 75, 0.05);
+  box-shadow: 0 3px 10px rgba(140, 90, 90, 0.05);
   transition:
     transform 0.3s,
     box-shadow 0.3s;
-  border: 1px solid var(--beige-medium);
+  border: 1px solid var(--pink-medium);
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(109, 93, 75, 0.1);
+  box-shadow: 0 10px 25px rgba(140, 90, 90, 0.1);
 }
 
 .product-image {
@@ -246,7 +275,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   opacity: 0;
   transition:
     opacity 0.3s,
@@ -263,13 +292,17 @@ header {
   position: absolute;
   top: 15px;
   left: 15px;
-  background-color: rgba(139, 115, 85, 0.9);
+  background-color: rgba(231, 84, 128, 0.9);
   color: white;
   padding: 5px 12px;
   border-radius: 1px;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+}
+
+.sale-badge {
+  background-color: rgba(255, 77, 77, 0.9);
 }
 
 .product-info {
@@ -279,7 +312,7 @@ header {
 .product-title {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 400;
 }
 
@@ -293,9 +326,20 @@ header {
 
 .product-price {
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--pink-brown);
   font-size: 1.3rem;
   margin-bottom: 20px;
+}
+
+.product-sale-price {
+  color: #ff4d4d;
+}
+
+.product-original-price {
+  text-decoration: line-through;
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
 .product-meta {
@@ -305,15 +349,15 @@ header {
   color: var(--text-light);
   margin-bottom: 20px;
   padding: 12px 0;
-  border-top: 1px solid var(--beige-medium);
-  border-bottom: 1px solid var(--beige-medium);
+  border-top: 1px solid var(--pink-medium);
+  border-bottom: 1px solid var(--pink-medium);
   letter-spacing: 0.3px;
 }
 
 .add-to-cart {
   width: 100%;
   padding: 12px;
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
   color: white;
   border: none;
   border-radius: 1px;
@@ -330,7 +374,7 @@ header {
 }
 
 .add-to-cart:hover {
-  background-color: var(--accent-color);
+  background-color: var(--pink-dark);
 }
 
 /* Image Modal */
@@ -341,7 +385,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(74, 64, 53, 0.95);
+  background-color: rgba(140, 90, 90, 0.95);
   z-index: 1100;
   overflow: hidden;
 }
@@ -385,7 +429,7 @@ header {
 }
 
 .close-image-modal:hover {
-  color: var(--beige-brown);
+  color: var(--pink-medium);
 }
 
 .image-modal-info {
@@ -404,14 +448,14 @@ header {
 }
 
 .image-modal-info p {
-  color: var(--beige-dark);
+  color: var(--pink-medium);
   font-size: 1rem;
 }
 
-/* Why Us Section */
+/* Why Us Section - обновленные цвета */
 .why-us {
   padding: 80px 0;
-  background-color: var(--beige-medium);
+  background-color: var(--pink-medium);
   margin-bottom: 40px;
   position: relative;
 }
@@ -426,7 +470,7 @@ header {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--beige-brown),
+    var(--pink-brown),
     transparent
   );
 }
@@ -440,7 +484,7 @@ header {
 .why-us h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 300;
   position: relative;
   padding-bottom: 15px;
@@ -454,7 +498,7 @@ header {
   transform: translateX(-50%);
   width: 80px;
   height: 2px;
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
 }
 
 .why-us p {
@@ -489,14 +533,14 @@ header {
 
 .feature i {
   font-size: 2.5rem;
-  color: var(--beige-brown);
+  color: var(--pink-brown);
   margin-bottom: 20px;
 }
 
 .feature h3 {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -509,7 +553,7 @@ header {
   line-height: 1.6;
 }
 
-/* Cart Modal */
+/* Cart Modal - обновленные цвета */
 .modal {
   display: none;
   position: fixed;
@@ -517,21 +561,21 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(74, 64, 53, 0.7);
+  background-color: rgba(140, 90, 90, 0.7);
   z-index: 1000;
   overflow-y: auto;
 }
 
 .modal-content {
-  background-color: var(--beige-light);
+  background-color: var(--pink-light);
   margin: 50px auto;
   padding: 40px;
   border-radius: 1px;
   width: 90%;
   max-width: 900px;
   position: relative;
-  border: 1px solid var(--beige-dark);
-  box-shadow: 0 10px 40px rgba(74, 64, 53, 0.15);
+  border: 1px solid var(--pink-dark);
+  box-shadow: 0 10px 40px rgba(140, 90, 90, 0.15);
 }
 
 .close-modal {
@@ -545,16 +589,16 @@ header {
 }
 
 .close-modal:hover {
-  color: var(--dark-brown);
+  color: var(--dark-pink);
 }
 
 .modal-content h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 300;
   padding-bottom: 15px;
-  border-bottom: 1px solid var(--beige-medium);
+  border-bottom: 1px solid var(--pink-medium);
 }
 
 .cart-items {
@@ -569,12 +613,12 @@ header {
 }
 
 .cart-items::-webkit-scrollbar-track {
-  background: var(--beige-medium);
+  background: var(--pink-medium);
   border-radius: 1px;
 }
 
 .cart-items::-webkit-scrollbar-thumb {
-  background: var(--beige-brown);
+  background: var(--pink-brown);
   border-radius: 1px;
 }
 
@@ -582,7 +626,7 @@ header {
   display: flex;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid var(--beige-medium);
+  border-bottom: 1px solid var(--pink-medium);
   gap: 20px;
 }
 
@@ -592,7 +636,7 @@ header {
   border-radius: 1px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid var(--beige-dark);
+  border: 1px solid var(--pink-dark);
   cursor: pointer;
 }
 
@@ -609,13 +653,13 @@ header {
 .cart-item-info h4 {
   margin-bottom: 8px;
   font-size: 1.1rem;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 500;
 }
 
 .cart-item-price {
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--pink-brown);
   font-size: 1.1rem;
 }
 
@@ -626,7 +670,7 @@ header {
 }
 
 .quantity-btn {
-  background-color: var(--beige-medium);
+  background-color: var(--pink-medium);
   border: none;
   width: 32px;
   height: 32px;
@@ -636,12 +680,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   transition: all 0.3s;
 }
 
 .quantity-btn:hover {
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
   color: white;
 }
 
@@ -651,8 +695,8 @@ header {
   font-weight: 500;
   margin: 40px 0;
   padding-top: 25px;
-  border-top: 2px solid var(--beige-medium);
-  color: var(--dark-brown);
+  border-top: 2px solid var(--pink-medium);
+  color: var(--dark-pink);
 }
 
 /* Empty cart message */
@@ -665,22 +709,22 @@ header {
 .empty-cart i {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--beige-dark);
+  color: var(--pink-dark);
 }
 
 .empty-cart h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-weight: 400;
 }
 
 /* Checkout Form */
 .checkout-form h3 {
   margin-bottom: 25px;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   padding-top: 25px;
-  border-top: 2px solid var(--beige-medium);
+  border-top: 2px solid var(--pink-medium);
   font-weight: 400;
   font-size: 1.5rem;
 }
@@ -693,14 +737,14 @@ header {
   display: block;
   margin-bottom: 10px;
   font-weight: 500;
-  color: var(--dark-brown);
+  color: var(--dark-pink);
   font-size: 0.95rem;
 }
 
 .form-group input {
   width: 100%;
   padding: 14px 18px;
-  border: 1px solid var(--beige-dark);
+  border: 1px solid var(--pink-dark);
   border-radius: 1px;
   font-size: 1rem;
   transition: border 0.3s;
@@ -710,7 +754,7 @@ header {
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--beige-brown);
+  border-color: var(--pink-brown);
 }
 
 .form-row {
@@ -742,13 +786,13 @@ header {
   margin: 0;
 }
 
-/* Footer */
+/* Footer - обновленные цвета */
 footer {
-  background-color: var(--dark-brown);
-  color: var(--beige-light);
+  background-color: var(--dark-pink);
+  color: var(--pink-light);
   padding: 50px 0 30px;
   margin-top: 80px;
-  border-top: 1px solid var(--beige-brown);
+  border-top: 1px solid var(--pink-brown);
 }
 
 .footer-content {
@@ -766,7 +810,7 @@ footer {
 .footer-section h3 {
   font-size: 1.3rem;
   margin-bottom: 25px;
-  color: var(--beige-light);
+  color: var(--pink-light);
   font-weight: 400;
   position: relative;
   padding-bottom: 10px;
@@ -779,11 +823,11 @@ footer {
   left: 0;
   width: 40px;
   height: 1px;
-  background-color: var(--beige-brown);
+  background-color: var(--pink-brown);
 }
 
 .footer-section p {
-  color: var(--beige-dark);
+  color: var(--pink-medium);
   margin-bottom: 15px;
   line-height: 1.7;
 }
@@ -795,24 +839,76 @@ footer {
 }
 
 .social-icons a {
-  color: var(--beige-light);
+  color: var(--pink-light);
   font-size: 1.3rem;
   transition: color 0.3s;
   opacity: 0.8;
 }
 
 .social-icons a:hover {
-  color: var(--beige-brown);
+  color: var(--pink-medium);
   opacity: 1;
 }
 
 .copyright {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(139, 115, 85, 0.3);
-  color: var(--beige-dark);
+  border-top: 1px solid rgba(247, 143, 179, 0.3);
+  color: var(--pink-medium);
   font-size: 0.9rem;
   margin-top: 20px;
+}
+
+/* Новые разделы - индивидуальные страницы */
+.discounts-section {
+  padding: 80px 0;
+  background-color: var(--pink-light);
+}
+
+.custom-stickers-section {
+  padding: 100px 0;
+  text-align: center;
+  background-color: var(--pink-medium);
+}
+
+.custom-stickers-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid var(--pink-dark);
+}
+
+.custom-stickers-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--dark-pink);
+  font-weight: 300;
+}
+
+.custom-stickers-content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Back to home button */
+.back-to-home {
+  display: inline-block;
+  margin-top: 30px;
+  color: var(--pink-brown);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.back-to-home:hover {
+  color: var(--dark-pink);
 }
 
 /* Responsive */
@@ -837,12 +933,12 @@ footer {
     top: 70px;
     left: 0;
     width: 100%;
-    background-color: var(--beige-light);
+    background-color: var(--pink-light);
     flex-direction: column;
     align-items: center;
     padding: 25px 0;
-    box-shadow: 0 5px 15px rgba(109, 93, 75, 0.1);
-    border-top: 1px solid var(--beige-medium);
+    box-shadow: 0 5px 15px rgba(140, 90, 90, 0.1);
+    border-top: 1px solid var(--pink-medium);
   }
 
   .nav-links.active {
@@ -896,9 +992,15 @@ footer {
     top: -50px;
     right: -10px;
   }
+
+  /* Для мобильных - показывать по 2 объекта в каталоге */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .hero {
     padding: 50px 20px;
   }
@@ -909,7 +1011,20 @@ footer {
   }
 
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card {
+    margin-bottom: 0;
+  }
+
+  .product-image {
+    height: 150px;
+  }
+
+  .product-info {
+    padding: 15px;
   }
 
   .cart-item-actions {
@@ -919,8 +1034,14 @@ footer {
   }
 
   .catalog,
-  .why-us {
+  .why-us,
+  .discounts-section,
+  .custom-stickers-section {
     padding: 60px 0;
+  }
+
+  .custom-stickers-content {
+    padding: 30px 20px;
   }
 }
 
@@ -933,7 +1054,7 @@ footer {
   font-size: 0.85rem;
   color: var(--text-light);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  border: 1px dashed var(--beige-dark);
+  border: 1px dashed var(--pink-dark);
   transform: rotate(-2deg);
   z-index: 1;
 }
@@ -947,8 +1068,8 @@ footer {
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  border: 5px solid var(--beige-medium);
-  border-top: 5px solid var(--beige-brown);
+  border: 5px solid var(--pink-medium);
+  border-top: 5px solid var(--pink-brown);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   z-index: 2000;
