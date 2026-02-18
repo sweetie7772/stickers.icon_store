@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stickers as a mood - магазин стикерів</title>
+    <title>stickers.icon - магазин стикерів</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css">
+     <link rel="icon" type="image/png" href="stickers_images/head.png">
   </head>
   <body>
     <!-- Loading spinner -->
@@ -62,7 +63,8 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#" class="active" data-section="home">Головна</a></li>
           <li class="catalog-dropdown">
-            <a href="#" data-section="catalog" id="catalogLink">Каталог <i class="fas fa-chevron-down"></i></a>
+            <!-- Убрали data-section у основной ссылки Каталог -->
+            <a href="#" id="catalogLink">Каталог <i class="fas fa-chevron-down"></i></a>
             <div class="dropdown-menu" id="dropdownMenu">
               <a href="#" data-section="catalog">Всі стікери</a>
               <a href="#" data-section="discounts">Знижки</a>
@@ -84,16 +86,14 @@
       </div>
     </header>
 
-    <!-- Main Page Content - видно по умолчанию -->
+    <!-- Main Page Content -->
     <div id="mainPageContent" class="main-page-section">
       <!-- Hero Section -->
       <section class="hero" id="home">
         <div class="hero-container">
           <div class="hero-image">
-            <!-- Десктопное изображение - для ПК -->
-            <img src="/stickers_images/logo.jpg" alt="Stickers as a mood" class="hero-image-desktop">
-            <!-- Мобильное изображение - для телефонов -->
-            <img src="/stickers_images/logo-mobile.jpg" alt="Stickers as a mood" class="hero-image-mobile">
+            <img src="/stickers_images/logo.jpg" alt="stickers.icon" class="hero-image-desktop">
+            <img src="/stickers_images/logo-mobile.jpg" alt="stickers.icon" class="hero-image-mobile">
           </div>
           <div class="hero-content"></div>
         </div>
@@ -174,7 +174,7 @@
         <div class="container">
           <div class="footer-content">
             <div class="footer-section">
-              <h3>Stickers as a mood</h3>
+              <h3>stickers.icon</h3>
               <p>наліпки, як продовження тебе</p>
               <p>
                 Ми створюємо стікери, які відображають ваш настрій та стиль.
@@ -183,31 +183,30 @@
 
             <div class="footer-section">
               <h3>Контакти</h3>
-              <p>Email: hello@stickersmood.com</p>
-              <p>Телефон: +38 (093) 123-45-67</p>
-              <p>Працюємо: Пн-Пт 10:00-18:00</p>
+              <p> Телефон: 
+  <a href="tel:+380984640615">+38 (098) 464-06-15</a>
+</p>
+              <p>Працюємо: Без вихідних</p>
             </div>
 
             <div class="footer-section">
               <h3>Ми в соцмережах</h3>
               <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/stickers.icon/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@stickers.icon?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
             </div>
               <p>Підписуйтесь за натхненням</p>
             </div>
           </div>
 
           <div class="copyright">
-            &copy; 2026 Stickers as a mood. Всі права захищені.
+            &copy; 2026 stickers.icon. Всі права захищені.
           </div>
         </div>
       </footer>
     </div>
 
-    <!-- Discounts Page - отдельная страница, скрыта по умолчанию -->
+    <!-- Discounts Page -->
     <div id="discountsPage" class="individual-page">
       <section class="discounts-section">
         <div class="container">
@@ -232,7 +231,7 @@
       </section>
     </div>
 
-    <!-- Stickers 10x6 Page - отдельная страница, скрыта по умолчанию -->
+    <!-- Stickers 10x6 Page -->
     <div id="stickers10x6Page" class="individual-page">
       <section class="stickers10x6-section">
         <div class="container">
@@ -257,7 +256,7 @@
       </section>
     </div>
 
-    <!-- Stickers 10x15 Page - отдельная страница, скрыта по умолчанию -->
+    <!-- Stickers 10x15 Page -->
     <div id="stickers10x15Page" class="individual-page">
       <section class="stickers10x15-section">
         <div class="container">
@@ -282,7 +281,7 @@
       </section>
     </div>
 
-    <!-- Wholesale Page - отдельная страница, скрыта по умолчанию -->
+    <!-- Wholesale Page -->
     <div id="wholesalePage" class="individual-page">
       <section class="wholesale-section">
         <div class="container">
@@ -307,28 +306,18 @@
             <div class="wholesale-photo">
               <img src="/stickers_images/opt/5463401144903208289.jpg" alt="Опт 1" 
                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"720\" height=\"1280\" viewBox=\"0 0 720 1280\"%3E%3Crect width=\"720\" height=\"1280\" fill=\"%23FFD6E7\"/%3E%3Ctext x=\"360\" y=\"640\" font-family=\"Arial\" font-size=\"32\" fill=\"%238C5A5A\" text-anchor=\"middle\" dy=\".3em\"%3EОптове замовлення 1%3C/text%3E%3Ctext x=\"360\" y=\"700\" font-family=\"Arial\" font-size=\"24\" fill=\"%238C5A5A\" text-anchor=\"middle\"%3E720×1280 px%3C/text%3E%3C/svg%3E';">
-              <div class="photo-description">
-                <h3>Пакетування опту</h3>
-                <p>Професійне пакування великих замовлень</p>
-              </div>
+              
             </div>
             
             <div class="wholesale-photo">
               <img src="/stickers_images/opt/5463401144903208290.jpg" alt="Опт 2" 
                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"720\" height=\"1280\" viewBox=\"0 0 720 1280\"%3E%3Crect width=\"720\" height=\"1280\" fill=\"%23FFF1F6\"/%3E%3Ctext x=\"360\" y=\"640\" font-family=\"Arial\" font-size=\"32\" fill=\"%238C5A5A\" text-anchor=\"middle\" dy=\".3em\"%3EОптове замовлення 2%3C/text%3E%3Ctext x=\"360\" y=\"700\" font-family=\"Arial\" font-size=\"24\" fill=\"%238C5A5A\" text-anchor=\"middle\"%3E720×1280 px%3C/text%3E%3C/svg%3E';">
-              <div class="photo-description">
-                <h3>Об'ємна партія</h3>
-                <p>Виготовлення великих партій стикерів</p>
-              </div>
+              
             </div>
             
             <div class="wholesale-photo">
               <img src="/stickers_images/opt/5463401144903208291.jpg" alt="Опт 3" 
                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"720\" height=\"1280\" viewBox=\"0 0 720 1280\"%3E%3Crect width='720' height='1280' fill='%23F78FB3'/%3E%3Ctext x='360' y='640' font-family='Arial' font-size='32' fill='white' text-anchor='middle' dy='.3em'%3EОптове замовлення 3%3C/text%3E%3Ctext x='360' y='700' font-family='Arial' font-size='24' fill='white' text-anchor='middle'%3E720×1280 px%3C/text%3E%3C/svg%3E';">
-              <div class="photo-description">
-                <h3>Логістика</h3>
-                <p>Організація доставки великих замовлень</p>
-              </div>
             </div>
           </div>
 
@@ -367,16 +356,17 @@
             </div>
             
             <div class="contact-details">
-              <p><i class="fas fa-envelope"></i> .....@stickers.icon</p>
-              <p><i class="fas fa-phone"></i> +38 (093) 123-45-67</p>
-              <p><i class="fas fa-clock"></i> Пн-Пт 10:00-18:00</p>
+              <p>
+  <i class="fas fa-phone"></i> 
+  <a href="tel:+380984640615">+38 (098) 464-06-15</a>
+</p>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- Custom Stickers Page - отдельная страница, скрыта по умолчанию -->
+    <!-- Custom Stickers Page -->
     <div id="customStickersPage" class="individual-page">
       <section class="custom-stickers-section">
         <div class="container">
@@ -481,12 +471,11 @@
     </div>
 
     <script>
-      // Telegram Bot Configuration - ВАШИ ДАННЫЕ
+      // Telegram Bot Configuration
       const TELEGRAM_BOT_TOKEN = "8361096841:AAHaQrpfug11rfPVMfiP_eeyOHJtqKkrlkU";
-      // Два чат ID для отправки заказов
       const TELEGRAM_CHAT_IDS = ["505754972", "324404197"];
 
-      // Product data with images matching the pink aesthetic
+      // Product data
       const products = [
         {
           id: 1,
@@ -494,10 +483,10 @@
           description: "10-15 стикерів • premium print",
           price: 380,
           count: "10-15 стикерів",
-          finish: "boss",
+          finish: "Coffe",
           print: "premium print",
           image: "stickers_images/catalog/bossgirl.jpg",
-          image2: "stickers_images/catalog/catalog-vid/video5469746331557861972.mp4",
+          image2: "",
         },
         {
           id: 2,
@@ -508,7 +497,7 @@
           finish: "Coffe",
           print: "premium print",
           image: "stickers_images/catalog/coffevibe.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "",
         },
         {
           id: 3,
@@ -519,7 +508,7 @@
           finish: "Kitty",
           print: "premium print",
           image: "stickers_images/catalog/kitty.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "",
         },
         {
           id: 4,
@@ -530,7 +519,7 @@
           finish: "Leo",
           print: "premium print",
           image: "stickers_images/catalog/leo.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "s",
         },
         {
           id: 5,
@@ -541,7 +530,7 @@
           finish: "Matcha",
           print: "premium print",
           image: "stickers_images/catalog/matcha.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "",
         },
         {
           id: 6,
@@ -552,7 +541,7 @@
           finish: "Sea&Sky",
           print: "premium print",
           image: "stickers_images/catalog/seasky.jpg",
-          image2: "stickers_images/catalog/catalog-vid/coffevibe-vid.mp4",
+          image2: "",
         },
         {
           id: 7,
@@ -563,7 +552,7 @@
           finish: "Vanilla",
           print: "premium print",
           image: "stickers_images/catalog/vanilla.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "",
         },
         {
           id: 8,
@@ -574,8 +563,367 @@
           finish: "Wild",
           print: "premium print",
           image: "stickers_images/catalog/wild.jpg",
-          image2: "stickers_images/catalog/catalog-vid/kitty-vid.mp4",
+          image2: "",
         },
+        {
+          id: 9,
+          name: "A man",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/a man.jpg",
+          image2: "",
+        },
+        {
+          id: 10,
+          name: "Be my Lady",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/be my lady.jpg",
+          image2: "",
+        },
+        {
+          id: 11,
+          name: "Black Edition",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/black edition.jpg",
+          image2: "",
+        },
+        {
+          id: 12,
+          name: "Blonde era",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/blonde era.jpg",
+          image2: "",
+        },
+        {
+          id: 13,
+          name: "Bon Voyage",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/bon voyage.jpg",
+          image2: "",
+        },
+        {
+          id: 14,
+          name: "Bridgerton",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/bridgerton.jpg",
+          image2: "",
+        },
+        {
+          id: 15,
+          name: "Brunette era",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/brunette era.jpg",
+          image2: "",
+        },
+        {
+          id: 16,
+          name: "Chic",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/chic.jpg",
+          image2: "",
+        },
+        {
+          id: 17,
+          name: "Chill girl",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/chill girl.jpg",
+          image2: "",
+        },
+        {
+          id: 18,
+          name: "Crème",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/Crème.jpg",
+          image2: "",
+        },
+        {
+          id: 19,
+          name: "Diva",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/diva.jpg",
+          image2: "",
+        },
+        {
+          id: 20,
+          name: "Golden Hour",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/golden hour.jpg",
+          image2: "",
+        },
+        {
+          id: 21,
+          name: "Home Vibe",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/home vibe.jpg",
+          image2: "",
+        },
+        {
+          id: 22,
+          name: "Kharkiv",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/kharkiv.jpg",
+          image2: "",
+        },
+        {
+          id: 23,
+          name: "Lucky girl",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/lucky girl.jpg",
+          image2: "",
+        },
+        {
+          id: 24,
+          name: "Luxury beach",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/luxury beach.jpg",
+          image2: "",
+        },
+        {
+          id: 25,
+          name: "Merry Christmas",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/merry christmas.jpg",
+          image2: "",
+        },
+        {
+          id: 26,
+          name: "Models",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/models.jpg",
+          image2: "",
+        },
+        {
+          id: 27,
+          name: "More Coffe",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/more coffe.jpg",
+          image2: "",
+        },
+        {
+          id: 28,
+          name: "NY",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/NY.jpg",
+          image2: "",
+        },
+        {
+          id: 29,
+          name: "Pretty girls",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/pretty girls.jpg",
+          image2: "",
+        },
+        {
+          id: 30,
+          name: "Retro",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/retro.jpg",
+          image2: "",
+        },
+        {
+          id: 31,
+          name: "Snake",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/snake.jpg",
+          image2: "",
+        },
+        {
+          id: 32,
+          name: "Stay sexy",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/stay sexy.jpg",
+          image2: "",
+        },
+        {
+          id: 33,
+          name: "The Weekend",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/the weekend.jpg",
+          image2: "",
+        },
+        {
+          id: 34,
+          name: "Vintage",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/vintage.jpg",
+          image2: "",
+        }, 
+        {
+          id: 35,
+          name: "Clean Girl",
+          price: 230,
+          image: "stickers_images/catalog/catalog-small/clean girl.jpg",
+          image2: "",
+        },
+         {
+          id: 36,
+          name: "Girls",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/girls.jpg",
+          image2: "",
+        },
+         {
+          id: 37,
+          name: "No risk",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/no risk.jpg",
+          image2: "",
+        },
+         {
+          id: 38,
+          name: "Pink",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/pink.jpg",
+          image2: "",
+        },
+        {
+          id: 39,
+          name: "Rich&Sexy",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/rich&sexy.jpg",
+          image2: "",
+        },
+        {
+          id: 40,
+          name: "Sportik",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/sportik.jpg",
+          image2: "",
+        },
+        {
+          id: 41,
+          name: "YSL",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/ysl.jpg",
+          image2: "",
+        }
       ];
 
       // Discount products
@@ -583,12 +931,8 @@
         {
           id: 101,
           name: "Chic",
-          description: "10-15 стикерів • limited edition",
           originalPrice: 300,
           price: 200,
-          count: "10-15 стикерів",
-          finish: "spring",
-          print: "premium print",
           image: "/stickers_images/newyork.jpg",
           image2: "/stickers_images/discount-video1.mp4",
           discount: "33%",
@@ -664,47 +1008,76 @@
       const stickers10x6 = [
         {
           id: 201,
-          name: "Chic",
-          description: "8-12 стікерів • розмір 10×6",
-          price: 180,
-          count: "8-12 стікерів",
-          finish: "floral",
-          print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/small-video1.mp4",
+          name: "Clean Girl",
+          price: 230,
+          image: "stickers_images/catalog/catalog-small/clean girl.jpg",
+          image2: "",
         },
          {
           id: 202,
-          name: "Chic",
+          name: "Girls",
           description: "8-12 стікерів • розмір 10×6",
-          price: 180,
+          price: 230,
           count: "8-12 стікерів",
           finish: "floral",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/small-video2.mp4",
+          image: "stickers_images/catalog/catalog-small/girls.jpg",
+          image2: "",
         },
          {
           id: 203,
-          name: "Chic",
+          name: "No risk",
           description: "8-12 стікерів • розмір 10×6",
-          price: 180,
+          price: 230,
           count: "8-12 стікерів",
           finish: "floral",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/small-video3.mp4",
+          image: "stickers_images/catalog/catalog-small/no risk.jpg",
+          image2: "",
         },
          {
           id: 204,
-          name: "Chic",
+          name: "Pink",
           description: "8-12 стікерів • розмір 10×6",
-          price: 180,
+          price: 230,
           count: "8-12 стікерів",
           finish: "floral",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/small-video4.mp4",
+          image: "stickers_images/catalog/catalog-small/pink.jpg",
+          image2: "",
+        },
+        {
+          id: 205,
+          name: "Rich&Sexy",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/rich&sexy.jpg",
+          image2: "",
+        },
+        {
+          id: 206,
+          name: "Sportik",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/sportik.jpg",
+          image2: "",
+        },
+        {
+          id: 207,
+          name: "YSL",
+          description: "8-12 стікерів • розмір 10×6",
+          price: 230,
+          count: "8-12 стікерів",
+          finish: "floral",
+          print: "premium print",
+          image: "stickers_images/catalog/catalog-small/ysl.jpg",
+          image2: "",
         },
       ];
 
@@ -712,51 +1085,381 @@
       const stickers10x15 = [
         {
           id: 301,
-          name: "Chic",
-          description: "4-6 стікерів • розмір 10×15",
-          price: 320,
-          count: "4-6 стікерів",
-          finish: "nature",
+          name: "Boss Girl",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Coffe",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/large-video1.mp4",
+          image: "stickers_images/catalog/bossgirl.jpg",
+          image2: "",
         },
-         {
+        {
           id: 302,
-          name: "Chic",
-          description: "4-6 стікерів • розмір 10×15",
-          price: 320,
-          count: "4-6 стікерів",
-          finish: "nature",
+          name: "Coffe Vibe",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Coffe",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/large-video2.mp4",
+          image: "stickers_images/catalog/coffevibe.jpg",
+          image2: "",
         },
-         {
+        {
           id: 303,
-          name: "Chic",
-          description: "4-6 стікерів • розмір 10×15",
-          price: 320,
-          count: "4-6 стікерів",
-          finish: "nature",
+          name: "Kitty",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Kitty",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/large-video3.mp4",
+          image: "stickers_images/catalog/kitty.jpg",
+          image2: "",
         },
-         {
+        {
           id: 304,
-          name: "Chic",
-          description: "4-6 стікерів • розмір 10×15",
-          price: 320,
-          count: "4-6 стікерів",
-          finish: "nature",
+          name: "Leo",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Leo",
           print: "premium print",
-          image: "/stickers_images/newyork.jpg",
-          image2: "/stickers_images/large-video4.mp4",
+          image: "stickers_images/catalog/leo.jpg",
+          image2: "s",
         },
+        {
+          id: 305,
+          name: "Matcha",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Matcha",
+          print: "premium print",
+          image: "stickers_images/catalog/matcha.jpg",
+          image2: "",
+        },
+        {
+          id: 306,
+          name: "Sea&Sky",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Sea&Sky",
+          print: "premium print",
+          image: "stickers_images/catalog/seasky.jpg",
+          image2: "",
+        },
+        {
+          id: 307,
+          name: "Vanilla",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Vanilla",
+          print: "premium print",
+          image: "stickers_images/catalog/vanilla.jpg",
+          image2: "",
+        },
+        {
+          id: 308,
+          name: "Wild",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/wild.jpg",
+          image2: "",
+        },
+        {
+          id: 309,
+          name: "A man",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/a man.jpg",
+          image2: "",
+        },
+        {
+          id: 310,
+          name: "Be my Lady",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/be my lady.jpg",
+          image2: "",
+        },
+        {
+          id: 311,
+          name: "Black Edition",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/black edition.jpg",
+          image2: "",
+        },
+        {
+          id: 312,
+          name: "Blonde era",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/blonde era.jpg",
+          image2: "",
+        },
+        {
+          id: 313,
+          name: "Bon Voyage",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/bon voyage.jpg",
+          image2: "",
+        },
+        {
+          id: 314,
+          name: "Bridgerton",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/bridgerton.jpg",
+          image2: "",
+        },
+        {
+          id: 315,
+          name: "Brunette era",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/brunette era.jpg",
+          image2: "",
+        },
+        {
+          id: 316,
+          name: "Chic",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/chic.jpg",
+          image2: "",
+        },
+        {
+          id: 317,
+          name: "Chill girl",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/chill girl.jpg",
+          image2: "",
+        },
+        {
+          id: 318,
+          name: "Crème",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/Crème.jpg",
+          image2: "",
+        },
+        {
+          id: 319,
+          name: "Diva",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/diva.jpg",
+          image2: "",
+        },
+        {
+          id: 320,
+          name: "Golden Hour",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/golden hour.jpg",
+          image2: "",
+        },
+        {
+          id: 321,
+          name: "Home Vibe",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/home vibe.jpg",
+          image2: "",
+        },
+        {
+          id: 322,
+          name: "Kharkiv",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/kharkiv.jpg",
+          image2: "",
+        },
+        {
+          id: 323,
+          name: "Lucky girl",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/lucky girl.jpg",
+          image2: "",
+        },
+        {
+          id: 324,
+          name: "Luxury beach",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/luxury beach.jpg",
+          image2: "",
+        },
+        {
+          id: 325,
+          name: "Merry Christmas",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/merry christmas.jpg",
+          image2: "",
+        },
+        {
+          id: 326,
+          name: "Models",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/models.jpg",
+          image2: "",
+        },
+        {
+          id: 327,
+          name: "More Coffe",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/more coffe.jpg",
+          image2: "",
+        },
+        {
+          id: 328,
+          name: "NY",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/NY.jpg",
+          image2: "",
+        },
+        {
+          id: 329,
+          name: "Pretty girls",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/pretty girls.jpg",
+          image2: "",
+        },
+        {
+          id: 330,
+          name: "Retro",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/retro.jpg",
+          image2: "",
+        },
+        {
+          id: 331,
+          name: "Snake",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/snake.jpg",
+          image2: "",
+        },
+        {
+          id: 332,
+          name: "Stay sexy",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/stay sexy.jpg",
+          image2: "",
+        },
+        {
+          id: 333,
+          name: "The Weekend",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/the weekend.jpg",
+          image2: "",
+        },
+        {
+          id: 334,
+          name: "Vintage",
+          description: "10-15 стикерів • premium print",
+          price: 380,
+          count: "10-15 стикерів",
+          finish: "Wild",
+          print: "premium print",
+          image: "stickers_images/catalog/vintage.jpg",
+          image2: "",
+        }
       ];
 
-      // Fallback images in pink aesthetic
+      // Fallback images
       const fallbackImages = [
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF1F6'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EChic%3C/text%3E%3Crect x='200' y='320' width='200' height='2' fill='%23E75480'/%3E%3C/svg%3E",
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFD6E7'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3ENew York%3C/text%3E%3Crect x='200' y='320' width='200' height='2' fill='%23E75480'/%3E%3C/svg%3E",
@@ -768,7 +1471,6 @@
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFD6E7'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EBoho%3C/text%3E%3Crect x='200' y='320' width='200' height='2' fill='%23E75480'/%3E%3C/svg%3E",
       ];
 
-      // Fallback images for discount products
       const discountFallbackImages = [
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FF4D4D'/%3E%3Ctext x='300' y='280' font-family='Arial' font-size='36' fill='white' text-anchor='middle'%3ESpring Sale%3C/text%3E%3Ctext x='300' y='330' font-family='Arial' font-size='48' fill='white' text-anchor='middle' font-weight='bold'%3E-33%%25%3C/text%3E%3C/svg%3E",
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FF85A2'/%3E%3Ctext x='300' y='280' font-family='Arial' font-size='36' fill='white' text-anchor='middle'%3ESummer Vibes%3C/text%3E%3Ctext x='300' y='330' font-family='Arial' font-size='48' fill='white' text-anchor='middle' font-weight='bold'%3E-32%%25%3C/text%3E%3C/svg%3E",
@@ -778,7 +1480,6 @@
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23E75480'/%3E%3Ctext x='300' y='280' font-family='Arial' font-size='36' fill='white' text-anchor='middle'%3ERetro Discount%3C/text%3E%3Ctext x='300' y='330' font-family='Arial' font-size='48' fill='white' text-anchor='middle' font-weight='bold'%3E-30%%25%3C/text%3E%3C/svg%3E",
       ];
 
-      // Fallback images for 10x6 products
       const stickers10x6FallbackImages = [
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF1F6'/%3E%3Crect x='150' y='150' width='300' height='300' fill='%23FFD6E7'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EMini Flowers%3C/text%3E%3Ctext x='300' y='360' font-family='Arial' font-size='24' fill='%238C5A5A' text-anchor='middle'%3E10×6 см%3C/text%3E%3C/svg%3E",
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFD6E7'/%3E%3Crect x='150' y='150' width='300' height='300' fill='%23FFF1F6'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EMini Geometric%3C/text%3E%3Ctext x='300' y='360' font-family='Arial' font-size='24' fill='%238C5A5A' text-anchor='middle'%3E10×6 см%3C/text%3E%3C/svg%3E",
@@ -786,7 +1487,6 @@
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF1F6'/%3E%3Crect x='150' y='150' width='300' height='300' fill='%23F78FB3'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EMini Animals%3C/text%3E%3Ctext x='300' y='360' font-family='Arial' font-size='24' fill='%238C5A5A' text-anchor='middle'%3E10×6 см%3C/text%3E%3C/svg%3E",
       ];
 
-      // Fallback images for 10x15 products
       const stickers10x15FallbackImages = [
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFD6E7'/%3E%3Crect x='100' y='100' width='400' height='400' fill='%23FFF1F6'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='%238C5A5A' text-anchor='middle' dy='.3em'%3EBig Nature%3C/text%3E%3Ctext x='300' y='360' font-family='Arial' font-size='24' fill='%238C5A5A' text-anchor='middle'%3E10×15 см%3C/text%3E%3C/svg%3E",
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FFF1F6'/%3E%3Crect x='100' y='100' width='400' height='400' fill='%23F78FB3'/%3E%3Ctext x='300' y='300' font-family='Arial' font-size='36' fill='white' text-anchor='middle' dy='.3em'%3EBig City%3C/text%3E%3Ctext x='300' y='360' font-family='Arial' font-size='24' fill='white' text-anchor='middle'%3E10×15 см%3C/text%3E%3C/svg%3E",
@@ -848,36 +1548,21 @@
         renderStickers10x15();
         updateCartCount();
 
-        // Load cart from localStorage if exists
         const savedCart = localStorage.getItem("stickersCart");
         if (savedCart) {
           cart = JSON.parse(savedCart);
           updateCartCount();
         }
 
-        // Add sticker notes randomly
         addStickerNotes();
-
-        // Check Telegram configuration
         checkTelegramConfig();
-
-        // Set up navigation
         setupNavigation();
-
-        // Set up dropdown menu
         setupDropdownMenu();
-
-        // Set active nav for home by default
         setActiveNav("home");
-
-        // Initialize mobile image check
         checkMobileImage();
-
-        // Add resize listener for mobile image
-        window.addEventListener('resize', checkMobileImage);
-
-        // Close dropdown when clicking outside
         setupClickOutside();
+
+        window.addEventListener('resize', checkMobileImage);
       });
 
       // Функция для закрытия мобильного меню
@@ -885,6 +1570,13 @@
         if (window.innerWidth <= 768) {
           navLinks.classList.remove("active");
           burger.innerHTML = '<i class="fas fa-bars"></i>';
+          
+          // Закрываем дроп-меню каталога
+          if (dropdownMenu) {
+            dropdownMenu.style.display = "none";
+            const catalogLinkText = catalogLink.querySelector('i');
+            catalogLinkText.className = "fas fa-chevron-down";
+          }
         }
       }
 
@@ -913,6 +1605,8 @@
           if (catalogDropdown && dropdownMenu && dropdownMenu.style.display === 'block') {
             if (!catalogDropdown.contains(event.target)) {
               dropdownMenu.style.display = 'none';
+              const catalogLinkText = catalogLink.querySelector('i');
+              catalogLinkText.className = "fas fa-chevron-down";
             }
           }
         });
@@ -924,17 +1618,33 @@
         if (!catalogDropdown) return;
         
         const dropdownMenu = catalogDropdown.querySelector(".dropdown-menu");
+        const catalogLinkText = catalogLink.querySelector('i');
 
         catalogLink.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
           
-          if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
+          // На мобильных устройствах всегда открываем меню
+          if (window.innerWidth <= 768) {
+            if (dropdownMenu.style.display === "block") {
+              dropdownMenu.style.display = "none";
+              catalogLinkText.className = "fas fa-chevron-down";
+            } else {
+              dropdownMenu.style.display = "block";
+              catalogLinkText.className = "fas fa-chevron-up";
+            }
           } else {
-            dropdownMenu.style.display = "block";
-            closeMobileMenu();
+            // На десктопе обычное поведение
+            if (dropdownMenu.style.display === "block") {
+              dropdownMenu.style.display = "none";
+            } else {
+              dropdownMenu.style.display = "block";
+              closeMobileMenu();
+            }
           }
+          
+          // Устанавливаем активный класс для каталога
+          setActiveNav("catalog");
         });
 
         dropdownMenu.addEventListener("click", function (e) {
@@ -944,8 +1654,40 @@
         const dropdownItems = dropdownMenu.querySelectorAll("a");
         dropdownItems.forEach(item => {
           item.addEventListener("click", function(e) {
+            const section = this.getAttribute("data-section");
             dropdownMenu.style.display = "none";
+            
+            // На мобильных возвращаем стрелку вниз
+            if (window.innerWidth <= 768) {
+              catalogLinkText.className = "fas fa-chevron-down";
+            }
+            
+            // Обрабатываем клик по пунктам меню
+            if (section === "catalog") {
+              showMainPage();
+              setTimeout(() => {
+                scrollToSection("catalog");
+              }, 100);
+            } else if (
+              section === "discounts" ||
+              section === "stickers-10x6" ||
+              section === "stickers-10x15" ||
+              section === "wholesale"
+            ) {
+              showIndividualPage(section);
+            }
+            
+            setActiveNav(section);
+            closeMobileMenu();
           });
+        });
+        
+        // Закрытие дроп-меню при ресайзе на мобильных
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+            dropdownMenu.style.display = "none";
+            catalogLinkText.className = "fas fa-chevron-down";
+          }
         });
       }
 
@@ -957,7 +1699,6 @@
           setActiveNav("home");
           window.scrollTo({ top: 0, behavior: "smooth" });
           closeMobileMenu();
-          closeDropdownMenu();
         });
 
         const navLinksElements = document.querySelectorAll(
@@ -981,11 +1722,6 @@
             } else if (section === "home") {
               showMainPage();
               window.scrollTo({ top: 0, behavior: "smooth" });
-            } else if (section === "catalog") {
-              showMainPage();
-              setTimeout(() => {
-                scrollToSection("catalog");
-              }, 100);
             } else {
               showMainPage();
               setTimeout(() => {
@@ -994,7 +1730,6 @@
             }
 
             closeMobileMenu();
-            closeDropdownMenu();
           });
         });
 
@@ -1006,7 +1741,6 @@
             setActiveNav("home");
             window.scrollTo({ top: 0, behavior: "smooth" });
             closeMobileMenu();
-            closeDropdownMenu();
           });
         });
 
@@ -1022,19 +1756,11 @@
               scrollToSection("contacts");
             }, 100);
             closeMobileMenu();
-            closeDropdownMenu();
           });
         }
       }
 
-      // Закрыть выпадающее меню
-      function closeDropdownMenu() {
-        if (dropdownMenu) {
-          dropdownMenu.style.display = "none";
-        }
-      }
-
-      // Show main page (home page with all sections)
+      // Show main page
       function showMainPage() {
         mainPageContent.style.display = "block";
         discountsPage.style.display = "none";
@@ -1087,6 +1813,14 @@
             link.classList.add("active");
           }
         });
+        
+        // Также устанавливаем активный класс для основной ссылки Каталог
+        // даже если у нее нет data-section
+        if (section === "catalog") {
+          catalogLink.classList.add("active");
+        } else {
+          catalogLink.classList.remove("active");
+        }
       }
 
       // Scroll to section on main page
@@ -1108,9 +1842,6 @@
         ) {
           console.warn(
             "⚠️ Telegram бот не настроен. Заказы не будут приходить в Telegram.",
-          );
-          console.log(
-            "ℹ️ Вставьте ваш TELEGRAM_BOT_TOKEN в код JavaScript",
           );
         } else {
           console.log(
@@ -1165,15 +1896,12 @@
                         <div class="zoom-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
-                        <div class="product-badge">${product.print}</div>
+                        
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-meta">
-                            <span>${product.count}</span>
-                            <span>${product.finish}</span>
-                        </div>
+                        
+                        
                         <div class="product-price">${product.price} грн</div>
                         <button class="add-to-cart" data-id="${product.id}" data-type="regular">
                             <i class="fas fa-cart-plus"></i> Додати в кошик
@@ -1220,11 +1948,8 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-meta">
-                            <span>${product.count}</span>
-                            <span>${product.finish}</span>
-                        </div>
+                        
+                        
                         <div class="product-price">
                             <span class="product-sale-price">${product.price} грн</span>
                             <span class="product-original-price">${product.originalPrice} грн</span>
@@ -1278,11 +2003,8 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-meta">
-                            <span>${product.count}</span>
-                            <span>${product.finish}</span>
-                        </div>
+                       
+                      
                         <div class="product-price">${product.price} грн</div>
                         <button class="add-to-cart" data-id="${product.id}" data-type="10x6">
                             <i class="fas fa-cart-plus"></i> Додати в кошик
@@ -1319,7 +2041,7 @@
           const productCard = document.createElement("div");
           productCard.className = "product-card";
           productCard.innerHTML = `
-                    <div class="product-image" data-id="${product.id}" data-type="10x15">
+           <div class="product-image" data-id="${product.id}" data-type="10x15">
                         <img src="${product.image}" alt="${product.name}" 
                              onerror="this.src='${stickers10x15FallbackImages[index]}'; this.onerror=null;">
                         <div class="zoom-icon">
@@ -1329,17 +2051,15 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-meta">
-                            <span>${product.count}</span>
-                            <span>${product.finish}</span>
-                        </div>
+                       
+                      
                         <div class="product-price">${product.price} грн</div>
                         <button class="add-to-cart" data-id="${product.id}" data-type="10x15">
                             <i class="fas fa-cart-plus"></i> Додати в кошик
                         </button>
                     </div>
                 `;
+                  
 
           stickers10x15Grid.appendChild(productCard);
         });
@@ -1578,9 +2298,6 @@
         
         // Close mobile menu if open
         closeMobileMenu();
-        
-        // Close dropdown menu
-        closeDropdownMenu();
       }
 
       // Animate cart icon
@@ -1773,7 +2490,7 @@
         localStorage.setItem("stickersCart", JSON.stringify(cart));
       }
 
-      // Send order to Telegram (в ваш бот)
+      // Send order to Telegram
       async function sendOrderToTelegram(orderData) {
         if (
           !TELEGRAM_BOT_TOKEN ||
@@ -1781,9 +2498,6 @@
         ) {
           console.error(
             "❌ Telegram бот не настроен. Проверьте TELEGRAM_BOT_TOKEN",
-          );
-          console.log(
-            "Ваш токен должен быть вставлен в код JavaScript (строка 820)",
           );
           return false;
         }
@@ -1862,7 +2576,12 @@ ${orderData.items
           : '<i class="fas fa-bars"></i>';
           
         if (navLinks.classList.contains("active")) {
-          closeDropdownMenu();
+          // Закрываем дроп-меню каталога при открытии бургер-меню
+          if (dropdownMenu) {
+            dropdownMenu.style.display = "none";
+            const catalogLinkText = catalogLink.querySelector('i');
+            catalogLinkText.className = "fas fa-chevron-down";
+          }
         }
       });
 
@@ -2078,10 +2797,11 @@ ${orderData.items
           }
           if (dropdownMenu && dropdownMenu.style.display === "block") {
             dropdownMenu.style.display = "none";
+            const catalogLinkText = catalogLink.querySelector('i');
+            catalogLinkText.className = "fas fa-chevron-down";
           }
         }
       });
     </script>
-
   </body>
 </html>

@@ -18,6 +18,11 @@
   --beige-medium: #e8dfd5;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   background-color: var(--pink-light);
   color: var(--text-dark);
@@ -30,7 +35,7 @@ body {
   padding: 0 20px;
 }
 
-/* Header & Navigation - обновленные розовые тона */
+/* Header & Navigation */
 header {
   background-color: #fde2eb;
   box-shadow: 0 2px 10px rgba(140, 90, 90, 0.08);
@@ -93,7 +98,7 @@ header {
   min-width: 200px;
   box-shadow: 0 5px 20px rgba(140, 90, 90, 0.1);
   border: 1px solid var(--pink-dark);
-  border-radius: 1px;
+  border-radius: 2px;
   z-index: 1000;
   padding: 10px 0;
 }
@@ -172,17 +177,16 @@ header {
   color: var(--dark-pink);
 }
 
-/* Main page sections - показаны по умолчанию */
+/* Main page sections */
 .main-page-section {
   display: block;
 }
 
-/* Individual pages sections - скрыты по умолчанию */
 .individual-page {
   display: none;
 }
 
-/* Hero Section - FIXED */
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 0;
@@ -209,22 +213,18 @@ header {
   display: block;
 }
 
-/* Десктопное изображение - видно по умолчанию */
 .hero-image-desktop {
   display: block;
 }
 
-/* Мобильное изображение - скрыто по умолчанию */
 .hero-image-mobile {
   display: none;
 }
 
-/* Медиазапрос для мобильных устройств */
 @media (max-width: 800px) {
   .hero-image-desktop {
     display: none;
   }
-
   .hero-image-mobile {
     display: block;
   }
@@ -261,7 +261,6 @@ header {
   padding: 80px 0;
 }
 
-/* Изменено для мобильных устройств - показывать по 2 объекта */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -310,7 +309,7 @@ header {
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s;
 }
 
@@ -431,7 +430,7 @@ header {
   background-color: var(--pink-dark);
 }
 
-/* Image Modal with Video Support - РАСТЯНУТО НА ВСЮ ВЫСОТУ */
+/* Image Modal with Video Support - БЕЗ ЧЕРНЫХ ПОЛОС */
 .image-modal {
   display: none;
   position: fixed;
@@ -439,7 +438,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(140, 90, 90, 0.95);
+  background-color: rgba(255, 241, 246, 0.98);
   z-index: 1100;
   overflow: hidden;
   padding: 20px;
@@ -455,10 +454,10 @@ header {
   animation: zoomIn 0.3s;
   display: flex;
   flex-direction: column;
-  background-color: #000;
+  background-color: transparent;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes zoomIn {
@@ -477,7 +476,7 @@ header {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #000; /* Черный фон для видео */
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,6 +489,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(140, 90, 90, 0.05);
 }
 
 .slider-media img,
@@ -500,20 +500,35 @@ header {
   transform: translate(-50%, -50%);
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 95%;
+  max-height: 95%;
   object-fit: contain;
-  background-color: #000;
+  background-color: transparent;
   transition: opacity 0.3s;
+  border-radius: 2px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Для мобильных устройств - растягиваем на всю высоту */
+.slider-media video {
+  background-color: #000;
+}
+
 @media (max-width: 768px) {
   .slider-media img,
   .slider-media video {
-    width: 100%;
-    height: auto;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+  .slider-media {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-media img,
+  .slider-media video {
+    max-width: 98vw;
+    max-height: 70vh;
   }
 }
 
@@ -521,8 +536,8 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--pink-medium);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -534,11 +549,14 @@ header {
   color: var(--dark-pink);
   transition: all 0.3s;
   z-index: 10;
+  box-shadow: 0 3px 10px rgba(140, 90, 90, 0.1);
 }
 
 .slider-btn:hover {
   background-color: white;
   color: var(--pink-brown);
+  border-color: var(--pink-brown);
+  box-shadow: 0 5px 15px rgba(231, 84, 128, 0.2);
 }
 
 .prev-btn {
@@ -553,14 +571,16 @@ header {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--dark-pink);
+  padding: 8px 15px;
   border-radius: 20px;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   z-index: 10;
+  border: 1px solid var(--pink-medium);
+  box-shadow: 0 3px 10px rgba(140, 90, 90, 0.1);
 }
 
 .media-counter span {
@@ -573,21 +593,25 @@ header {
   right: 20px;
   font-size: 2.5rem;
   cursor: pointer;
-  color: white;
-  transition: color 0.3s;
+  color: var(--dark-pink);
+  transition: all 0.3s;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.95);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--pink-medium);
+  box-shadow: 0 3px 10px rgba(140, 90, 90, 0.1);
 }
 
 .close-image-modal:hover {
-  color: var(--pink-medium);
-  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--pink-brown);
+  background-color: white;
+  border-color: var(--pink-brown);
+  transform: rotate(90deg);
 }
 
 .image-modal-info {
@@ -596,9 +620,9 @@ header {
   left: 0;
   width: 100%;
   text-align: center;
-  color: white;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--dark-pink);
+  padding: 25px 20px;
+  background: linear-gradient(to top, rgba(255, 241, 246, 0.95), transparent);
   z-index: 10;
 }
 
@@ -606,58 +630,94 @@ header {
   font-size: 1.5rem;
   margin-bottom: 5px;
   font-weight: 400;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .image-modal-info p {
-  color: var(--pink-medium);
+  color: var(--text-light);
   font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-/* Адаптация для мобильных устройств */
-@media (max-width: 768px) {
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .prev-btn {
-    left: 10px;
-  }
-
-  .next-btn {
-    right: 10px;
-  }
-
-  .close-image-modal {
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 2rem;
-  }
-
-  .media-counter {
-    bottom: 10px;
-    right: 10px;
-    font-size: 0.8rem;
-    padding: 4px 12px;
-  }
-
-  .image-modal-info {
-    padding: 15px;
-  }
-
-  .image-modal-info h3 {
-    font-size: 1.3rem;
-  }
-
-  .image-modal-info p {
-    font-size: 0.9rem;
-  }
+/* Стили для всех кнопок без явных стилей */
+button:not(.add-to-cart):not(.quantity-btn):not(.slider-btn):not(
+    .decrease-btn
+  ):not(.increase-btn):not(.remove-btn):not(#closeSuccessModal) {
+  background-color: var(--pink-brown);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-/* Why Us Section - обновленные цвета */
+button:not(.add-to-cart):not(.quantity-btn):not(.slider-btn):not(
+    .decrease-btn
+  ):not(.increase-btn):not(.remove-btn):not(#closeSuccessModal):hover {
+  background-color: var(--pink-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 84, 128, 0.2);
+}
+
+button:not(.add-to-cart):not(.quantity-btn):not(.slider-btn):not(
+    .decrease-btn
+  ):not(.increase-btn):not(.remove-btn):not(#closeSuccessModal):active {
+  transform: translateY(0);
+}
+
+/* Стили для кнопок "Добавить в корзину" на других страницах */
+.btn,
+.btn-secondary {
+  background-color: var(--pink-brown);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.btn:hover,
+.btn-secondary:hover {
+  background-color: var(--pink-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 84, 128, 0.2);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--dark-pink);
+}
+
+.btn-secondary:hover {
+  background-color: var(--pink-brown);
+}
+
+/* Стили для иконок в кнопках */
+.btn i,
+.btn-secondary i,
+button:not(.add-to-cart):not(.quantity-btn):not(.slider-btn) i {
+  font-size: 0.9em;
+}
+
+/* Why Us Section */
 .why-us {
   padding: 80px 0;
   background-color: var(--pink-medium);
@@ -758,7 +818,7 @@ header {
   line-height: 1.6;
 }
 
-/* Cart Modal - обновленные цвета */
+/* Cart Modal */
 .modal {
   display: none;
   position: fixed;
@@ -991,7 +1051,7 @@ header {
   margin: 0;
 }
 
-/* Footer - обновленные цвета */
+/* Footer */
 footer {
   background-color: var(--dark-pink);
   color: var(--pink-light);
@@ -1064,24 +1124,16 @@ footer {
   margin-top: 20px;
 }
 
-/* Новые разделы - индивидуальные страницы */
-.discounts-section {
-  padding: 80px 0;
-  background-color: var(--pink-light);
-}
-
+/* Новые разделы */
+.discounts-section,
 .stickers10x6-section,
-.stickers10x15-section {
-  padding: 80px 0;
-  background-color: var(--pink-light);
-}
-
-/* Wholesale Page Styles - Обновлено для вертикальных изображений */
+.stickers10x15-section,
 .wholesale-section {
   padding: 80px 0;
   background-color: var(--pink-light);
 }
 
+/* Wholesale Page Styles */
 .wholesale-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1280,24 +1332,59 @@ footer {
   color: var(--dark-pink);
 }
 
+/* Sticker-like elements */
+.sticker-note {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 1px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: 1px dashed var(--pink-dark);
+  transform: rotate(-2deg);
+  z-index: 1;
+}
+
+/* Loading spinner */
+.spinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--pink-medium);
+  border-top: 5px solid var(--pink-brown);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 2000;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-
   .form-row {
     grid-template-columns: 1fr;
   }
-
   .features {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .wholesale-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .wholesale-photo {
     height: 500px;
   }
@@ -1324,15 +1411,62 @@ footer {
 
   .nav-links li {
     margin: 12px 0;
+    width: 100%;
+    text-align: center;
   }
 
-  .catalog-dropdown .dropdown-menu {
+  /* Стили для мобильного дроп-меню каталога */
+  .catalog-dropdown {
+    width: 100%;
+  }
+
+  .catalog-dropdown > a {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .dropdown-menu {
     position: static;
     display: none;
+    width: 100%;
     box-shadow: none;
     border: none;
-    background-color: transparent;
-    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    padding: 15px 0;
+    border-radius: 2px;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dropdown-menu a {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(231, 84, 128, 0.1);
+    font-size: 0.95rem;
+  }
+
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: rgba(231, 84, 128, 0.1);
+  }
+
+  .catalog-dropdown > a i {
+    font-size: 0.8rem;
+    margin-left: 8px;
+    transition: transform 0.3s;
   }
 
   .burger {
@@ -1406,39 +1540,31 @@ footer {
   .hero {
     padding: 0;
   }
-
   .hero-image {
     max-height: 40vh;
   }
-
   .modal-content {
     padding: 25px;
     width: 95%;
   }
-
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-
   .product-card {
     margin-bottom: 0;
   }
-
   .product-image {
     height: 250px;
   }
-
   .product-info {
     padding: 15px;
   }
-
   .cart-item-actions {
     width: 100%;
     justify-content: flex-end;
     margin-top: 15px;
   }
-
   .catalog,
   .why-us,
   .discounts-section,
@@ -1448,51 +1574,10 @@ footer {
   .custom-stickers-section {
     padding: 60px 0;
   }
-
   .custom-stickers-content {
     padding: 30px 20px;
   }
-
   .wholesale-photo {
     height: 400px;
-  }
-}
-
-/* Sticker-like elements */
-.sticker-note {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 15px;
-  border-radius: 1px;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  border: 1px dashed var(--pink-dark);
-  transform: rotate(-2deg);
-  z-index: 1;
-}
-
-/* Loading spinner */
-.spinner {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--pink-medium);
-  border-top: 5px solid var(--pink-brown);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  z-index: 2000;
-}
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
