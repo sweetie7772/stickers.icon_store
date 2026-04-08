@@ -1128,6 +1128,7 @@ footer {
 .discounts-section,
 .stickers10x6-section,
 .stickers10x15-section,
+.single-stickers-section,
 .wholesale-section {
   padding: 80px 0;
   background-color: var(--pink-light);
@@ -1570,6 +1571,7 @@ footer {
   .discounts-section,
   .stickers10x6-section,
   .stickers10x15-section,
+  .single-stickers-section,
   .wholesale-section,
   .custom-stickers-section {
     padding: 60px 0;
