@@ -1463,12 +1463,36 @@
 
       // Single Stickers products 
       const singleStickers = [
+       {
+          id: 516,
+          name: "11:11",
+          description: "Одиночний стікер 7×7 см",
+          price: 120,
+          image: "stickers_images/catalog/catalog-alone/11.11.jpg",
+          image2: "",
+        },
+        {
+          id: 515,
+          name: "Для захисту",
+          description: "Одиночний стікер 7×7 см",
+          price: 120,
+          image: "stickers_images/catalog/catalog-alone/длязахисту.jpg",
+          image2: "",
+        },
+        {
+          id: 514,
+          name: "Іньянь",
+          description: "Одиночний стікер 7×7 см",
+          price: 120,
+          image: "stickers_images/catalog/catalog-alone/іньянь.jpg",
+          image2: "",
+        },
         {
           id: 511,
           name: "Я не ідеальна, я ексклюзивна",
           description: "Одиночний стікер 7×7 см",
           price: 80,
-          image: "stickers_images/catalog/catalog-small/я не ідеальна.jpg",
+          image: "stickers_images/catalog/catalog-alone/я не ідеальна.jpg",
           image2: "",
         },
         {
@@ -1729,8 +1753,9 @@
       const preorderConfig = {
         products: [
           
-          { id: 0, selector: '.product-card' },     // Brunette era
-          { id: 0, selector: '.product-card' },    // Blonde era
+          { id: 514, selector: '.product-card' },     
+          { id: 515, selector: '.product-card' },  
+          { id: 516, selector: '.product-card' },   
         
         ],
         position: 'rounded'  
